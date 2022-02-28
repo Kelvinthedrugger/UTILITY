@@ -5,5 +5,11 @@ utlities for stuffs like fetch web content, macros defs in C, etc in different l
 
 #### Table of content
 
-fetch.py
+fetch.py:
+    download content from websites, sort of like !wget in linux i guess
+
+
+utlis.c:
+    commonly used macros and utlility function in C
+
 
