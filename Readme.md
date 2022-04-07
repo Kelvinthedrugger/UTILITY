@@ -12,4 +12,10 @@ fetch.py:
 utlis.c:
     commonly used macros and utlility function in C
 
+tagpy.bat:
+    make tags for every .py file in the current dir and its children
+
+ptags.py:
+    offically provided python script to make tags for .py files
+
 
