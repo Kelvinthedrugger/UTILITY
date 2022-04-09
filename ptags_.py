@@ -48,7 +48,7 @@ root = os.getcwd() # a string
 totaldir = list(os.walk(root))
 totalchild = [ele[0] for ele in totaldir]
 totalfile = [ele[2] for ele in totaldir]
-lgh = os.path.abspath(os.path.join(root,os.pardir))
+
 
 fullfile = [] # full file list with basename + filename
 def concat_dirs():
