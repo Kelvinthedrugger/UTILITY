@@ -18,4 +18,7 @@ tagpy.bat:
 ptags.py:
     offically provided python script to make tags for .py files
 
+ptags_.py:
+    utilizing officially provided file to process .py files huge repo
+    without encountering "command line input is too long" error
 
