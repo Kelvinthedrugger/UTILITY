@@ -1,41 +1,35 @@
-# just write the whole thing to the topest dir
+# create tags files for python3 at dir and its children if any
 import os
 
 
 # gloabal variables
 # first, collect all the dir and child dirs
+# use os.walk()
 total = list(os.walk(os.getcwd()))
 dirs = []
 files = []
 
 def setup():
-    # triple: (dir,child_dir,file)
+    # tri: (dir,child_dir,file)
     for tri in total:
         dirs.append(tri[0])
         files.append(tri[2])
 
 def walk_and_create_tags(counts=True):
-    # number of files for debug
-    cnt = 0
-    # loop thru all the dirs for .py files
-    #  and store them in "s" variable
-    s = ""
+    # then loop thru these dirs to create tag
+    # simple for-loop
+    # and single var s=""
+    cnt = 0 # number of files for debug
     for d, lis in zip(dirs,files):
+        s = ""
         for f in lis:
             if f.count(".") == 1:
                 if ".py" == f[-3:]:
                     print("passed", f)
-                    # needs to add base path
-                    # chr(92) is "\"
-                    s += d +chr(92) + f + " "
+                    s += f + " "
                     cnt += 1
-        # to avoid "too long cmd line problem"
-        if cnt % 50 == 49:
-            os.system("tagitpy.bat " + s)
-            # reset s
-            s = ""
-    # on last time, convert the remained files
-    os.system("tagitpy.bat " + s)
+        os.chdir(d)
+        os.system("tagitpy.bat " + s)
     if counts:
         print("\nparse %d files\n" % cnt)
 
