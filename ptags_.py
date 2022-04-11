@@ -1,5 +1,5 @@
-# write all the tags file at topest dir only
-
+# create tags files for python3 at dir and its children if any
+# in pure python
 import sys, re, os
 
 # take advantage of original ptags.py script
